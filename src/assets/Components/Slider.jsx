@@ -11,12 +11,14 @@ function Slider() {
         getTrendingMovies();
     }, [])
 
-    const getTrendingMovies=()=>{
-        GlobalApi.getTrendingVideos.then(resp=>{
-            console.log(resp.data.results);
-            setMoviesList(resp.data.results)
-        })
-    }
+const getTrendingMovies = () => {
+  GlobalApi.getTrendingVideos().then(resp => {
+    console.log(resp.data.results);
+    setMoviesList(resp.data.results);
+  }).catch(error => {
+    console.error("Error fetching trending videos:", error);
+  });
+};
 
     const SliderRight = (element)=>{
       element.scrollLeft+=screenWidth-110
