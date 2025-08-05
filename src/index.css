@@ -33,6 +33,12 @@ body {
   min-height: 100vh;
   background-color: #121212; 
   color: #ffffff;
+  overflow-x: hidden; 
+  scrollbar-width: none; 
+}
+
+body::-webkit-scrollbar {
+  display: none; 
 }
 
 h1 {
